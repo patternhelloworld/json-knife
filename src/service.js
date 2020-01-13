@@ -77,7 +77,7 @@ function calculateSteps(original, key) {
             stepAreas.push({
                 key: null,
                 noKey : match[0],
-                etc : match,
+                //etc : match,
                 step:step,
                 previousLastIndex: previousLastIndex
             });
@@ -148,7 +148,7 @@ function calculateSteps(original, key) {
         stepAreas.push({
             key: match[2],
             noKey : null,
-            etc : match,
+            //etc : match,
             step: step,
             previousLastIndex: previousLastIndex
         });
