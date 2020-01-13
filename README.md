@@ -5,6 +5,9 @@ without using JSON.parse() & self-calling function.
 
 Zero dependency, 7KB
 
+<a href="http://jsfiddle.net/AndrewKang/mq7v54h3/" target="_blank">LIVE DEMO</a>
+
+
 ## Installation
 
 For ES5 users,

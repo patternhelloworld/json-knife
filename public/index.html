@@ -11,6 +11,7 @@
 
     <div class="backdrop">
         <div class="highlights">Test codes. Check console.</div>
+        <textarea></textarea>
     </div>
 </div>
 
@@ -67,7 +68,7 @@
         '        }]\n' +
         '    }';
 
-    let original2 = {
+    var original2 = {
         "prob\"lems": [{
             "classes": [{
                 "medications": [{
@@ -155,6 +156,28 @@
     console.log('String original  : dose, 15.333');
     console.log(re5);
     JSON.parse(re5);
+
+
+
+    $(function() {
+
+        // 1. TextArea
+        //bindEvents();
+        // handleInput();
+
+        $('textarea').val(original2);
+        //handleInput();
+/*
+        $('#logger').html(JSON.stringify(Pattern.TextArea.extractAllUrls(textStr, {
+            'ip_v4': true,
+            'ip_v6': true,
+            'localhost': true,
+            'intranet': false
+        }), null, 2));
+*/
+
+    })
+
 
 </script>
 </body>
