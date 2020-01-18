@@ -1,7 +1,7 @@
 {
   "name": "json-knife",
-  "version": "1.0.1",
-  "description": "Mass update certain key-values recursively in huge, complex JSON string trees without using JSON.parse() & self-calling function.",
+  "version": "1.1.0",
+  "description": "Mass update certain key-values recursively in huge, complex JSON string trees with a robust regular expression engine, which means this does not call JSON.parse().",
   "main": "src/entry.js",
   "scripts": {
     "build": "gulp",
