@@ -19,10 +19,10 @@ function adjustPreviousLastIndex(previousLastIndex, downArea, stepGapCnt) {
     let match = {};
     if ((match = rx.exec(downArea)) !== null) {
         stepGapLength = match[0].length;
-        console.log('previousLastIndex : ' + previousLastIndex);
+   /*     console.log('previousLastIndex : ' + previousLastIndex);
         console.log('downArea : ' + downArea);
         console.log('stepGapCnt : ' + stepGapCnt);
-        console.log('stepgapLEN : ' + stepGapLength);
+        console.log('stepgapLEN : ' + stepGapLength);*/
     }
 
 
@@ -81,7 +81,7 @@ function calculateSteps(original, key) {
             stepAreas.push({
                 key: null,
                 noKey : match[0],
-                etc : match,
+                //etc : match,
                 step:step,
                 previousLastIndex: previousLastIndex
             });
@@ -154,7 +154,7 @@ function calculateSteps(original, key) {
         stepAreas.push({
             key: match[2],
             noKey : null,
-            etc : match,
+            //etc : match,
             step: step,
             previousLastIndex: previousLastIndex
         });
@@ -163,7 +163,7 @@ function calculateSteps(original, key) {
     }
 
     //console.log('idx ' + idx)
-    console.log(stepAreas)
+    //console.log(stepAreas)
 
     return keySteps;
 }
@@ -228,9 +228,9 @@ function getMaterials(original, key, value) {
         idx += 1;
     }
 
-    console.log('※ getMaterials');
-    console.log(keySteps);
-    console.log(extractedAreas);
+   // console.log('※ getMaterials');
+   // console.log(keySteps);
+   // console.log(extractedAreas);
 
     return extractedAreas;
 }
