@@ -444,19 +444,19 @@
     console.log('Initial parsed string');
     console.log(src);
 
-    let re = Pattern.sculptJson(original, 'Mike {[Gentleman]}', null);
+/*    let re = Pattern.sculptJson(original, 'self', null);*/
 
-    let re1 = Pattern.sculptJson(src, 'Mike {[Gentleman]}', null);
-    let re2 = Pattern.sculptJson(original, 'friends', 300);
+    let re1 = Pattern.sculptJson(src, 'self', null);
+   let re2 = Pattern.sculptJson(original, 'friends', 300);
     let re3 = Pattern.sculptJson(src, 'className', true);
 
-    let re4 = Pattern.sculptJson(src, 'classNameMissed', 'this "ABC" met');
+    let re4 = Pattern.sculptJson(src, 'Mike {[Gentleman]}', 'this "ABC" met');
 
     let re5 = Pattern.sculptJson(src, 'dose', 15.333);
 
-    console.log('String original : Mike {[Gentleman]}, null');
+  /*  console.log('String original : Mike {[Gentleman]}, null');
     console.log(re);
-    JSON.parse(re);
+    JSON.parse(re);*/
 
     console.log('Parsed string : Mike {[Gentleman]}, null');
     console.log(re1);

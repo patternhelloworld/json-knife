@@ -18,9 +18,13 @@ function adjustPreviousLastIndex(previousLastIndex, downArea, stepGapCnt) {
     let rx = new RegExp(Pattern.steps.toNumberOfGap(stepGapCnt), '');
     let match = {};
     if ((match = rx.exec(downArea)) !== null) {
-        //console.log(stepGapLength);
         stepGapLength = match[0].length;
+        console.log('previousLastIndex : ' + previousLastIndex);
+        console.log('downArea : ' + downArea);
+        console.log('stepGapCnt : ' + stepGapCnt);
+        console.log('stepgapLEN : ' + stepGapLength);
     }
+
 
     return previousLastIndex - stepGapLength;
 }
@@ -77,7 +81,7 @@ function calculateSteps(original, key) {
             stepAreas.push({
                 key: null,
                 noKey : match[0],
-               // etc : match,
+                etc : match,
                 step:step,
                 previousLastIndex: previousLastIndex
             });
@@ -118,10 +122,12 @@ function calculateSteps(original, key) {
         let step = idx > 0 ? stepAreas[idx - 1]['step'] : 0;
 
         let downArea = match[1].match(new RegExp('^' + Pattern.commons.spaceOrEndBracketOrNot, "g"))[0];
-        let downAreaDescCnt = (match[1].match(new RegExp(Pattern.steps.desc, "g")) || []).length;
+        let descCnt = (match[1].match(new RegExp(Pattern.steps.desc, "g")) || []).length;
+        let ascCnt = (match[1].match(new RegExp(Pattern.steps.asc, "g")) || []).length;
 
-        step += (match[1].match(new RegExp(Pattern.steps.asc, "g")) || []).length;
-        step -= downAreaDescCnt;
+
+        step += ascCnt;
+        step -= descCnt;
 
 
         let previousLastIndex = match.index + downArea.length;
@@ -136,7 +142,7 @@ function calculateSteps(original, key) {
 
             } else {
 
-                keySteps.push(adjustPreviousLastIndex(previousLastIndex, downArea, stepMilestone - step));
+                keySteps.push(adjustPreviousLastIndex(previousLastIndex, downArea, stepMilestone - step + ascCnt));
                 stepMilestone = null;
             }
         }
@@ -148,7 +154,7 @@ function calculateSteps(original, key) {
         stepAreas.push({
             key: match[2],
             noKey : null,
-            //etc : match,
+            etc : match,
             step: step,
             previousLastIndex: previousLastIndex
         });
@@ -157,7 +163,7 @@ function calculateSteps(original, key) {
     }
 
     //console.log('idx ' + idx)
-    //console.log(stepAreas)
+    console.log(stepAreas)
 
     return keySteps;
 }
@@ -222,9 +228,9 @@ function getMaterials(original, key, value) {
         idx += 1;
     }
 
-    //console.log('※ getMaterials');
-    //console.log(keySteps);
-    //console.log(extractedAreas);
+    console.log('※ getMaterials');
+    console.log(keySteps);
+    console.log(extractedAreas);
 
     return extractedAreas;
 }

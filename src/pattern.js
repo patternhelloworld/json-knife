@@ -3,6 +3,7 @@ import Util from './util';
 const commons = {
 
     spaceOrNot: '[\\n\\r\\t\\s]*',
+    spaceOrNotOrComma: '[,\\n\\r\\t\\s]*',
     spaceOrBigStartBracketOrNot: '[\\[\\n\\r\\t\\s]*',
     spaceOrStartBracketOrNot: '[\\[{\\n\\r\\t\\s]*',
     spaceOrEndBracketOrNot: '[}\\]\\n\\r\\t\\s]*',
@@ -116,7 +117,7 @@ const steps = {
     asc: '[\\[{]',
     desc: '[\\]}]',
     toNumberOfGap(number) {
-        return '(?:' + commons.spaceOrNot + '[\\]}]' + commons.spaceOrNot + ')' + '{' + number + '}$';
+        return '(?:' + commons.spaceOrNot + '[\\]},]' + commons.spaceOrNot + ')' + '{' + number + '}$';
     }
 
 }
