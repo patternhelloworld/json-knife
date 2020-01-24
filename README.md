@@ -1,7 +1,7 @@
 # json-knife [![NPM version](https://img.shields.io/npm/v/json-knife.svg)](https://www.npmjs.com/package/json-knife) [![](https://data.jsdelivr.com/v1/package/gh/Andrew-Kang-G/json-knife/badge)](https://www.jsdelivr.com/package/gh/Andrew-Kang-G/json-knife)
 ## Overview
-Mass update certain key-values recursively in huge, complex JSON string trees
-without using JSON.parse() & self-calling function.
+Mass update certain key-values recursively in huge, complex and deep JSON string 
+with a robust regular expression based engine.
 
 Zero dependency, 7KB
 
@@ -23,7 +23,7 @@ For ES5 users,
 </html>
 ```
 
-For ES6 npm users, do 'npm install --save json-knife' on console.
+For ES6 npm users, run 'npm install --save json-knife' on console.
 
 ``` html
 import Pattern from 'json-knife';
