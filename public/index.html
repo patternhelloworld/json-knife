@@ -69,56 +69,378 @@
         '    }';
 
     var original2 = {
-        "prob\"lems": [{
-            "classes": [{
-                "medications": [{
-                    "medicationsClasses": [{
-                        "Mike {[Gentleman]}": [{
-                            "associatedDrug": [{
-                                "name": "asprin",
-                                "dose": 35.3,
-                                "strength": "500 mg",
-                                "className" : false
-                            }],
-                            "Mike {[Gentleman]}": [{
-                                "name": "somethingElse",
-                                "dose": "",
-                                "strength": "500 mg",
-                                "friends": {
-                                    "self": {
-                                        "Mike {[Gentleman]}": "33",
-                                        "names": ["aa"]
+        "problems": [
+            {
+                "classes": [
+                    {
+                        "medications": [
+                            {
+                                "medicationsClasses": [
+                                    {
+                                        "Mike {[Gentleman]}": [
+                                            {
+                                                "associatedDrug": [
+                                                    {
+                                                        "name": "asprin",
+                                                        "dose": "a",
+                                                        "strength": "500 mg"
+                                                    }
+                                                ],
+                                                "Mike {[Gentleman]}": [
+                                                    {
+                                                        "name": "somethingElse",
+                                                        "dose": "",
+                                                        "strength": "500 mg",
+                                                        "friends": {
+                                                            "self": {
+                                                                "Mike {[Gentleman]}": "33",
+                                                                "names": [
+                                                                    "aa"
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "Judy": [
+                                            {
+                                                "associatedDrug": [
+                                                    {
+                                                        "name": "asprin",
+                                                        "dose": "",
+                                                        "strength": "500 mg",
+                                                        "friends": [
+                                                            "Mike {[Gentleman]}"
+                                                        ]
+                                                    }
+                                                ],
+                                                "associatedDrug#2": [
+                                                    {
+                                                        "name": "somethingElse",
+                                                        "dose": "",
+                                                        "strength": "500 mg"
+                                                    }
+                                                ],
+                                                "friends": [
+                                                    {
+                                                        "Mike {[Gentleman]}": null
+                                                    },
+                                                    {
+                                                        "Mike {[Gentleman]}": [
+                                                            [
+                                                                "c[ 3\"5ool",
+                                                                35
+                                                            ],
+                                                            [
+                                                                "ca],[1\"3lm"
+                                                            ],
+                                                            53
+                                                        ]
+                                                    },
+                                                    "Jackson",
+                                                    "Mike {[Gentleman]}",
+                                                    {
+                                                        "problems": [
+                                                            {
+                                                                "aclasses": [
+                                                                    {
+                                                                        "medications": [
+                                                                            {
+                                                                                "medicationsClasses": [
+                                                                                    {
+                                                                                        "Mike {[Gentleman]}": [
+                                                                                            {
+                                                                                                "associatedDrug": [
+                                                                                                    {
+                                                                                                        "name": "asprin",
+                                                                                                        "dose": "a",
+                                                                                                        "strength": "500 mg"
+                                                                                                    }
+                                                                                                ],
+                                                                                                "Mike {[Gentleman]}": [
+                                                                                                    {
+                                                                                                        "name": "somethingElse",
+                                                                                                        "dose": "",
+                                                                                                        "strength": "500 mg",
+                                                                                                        "friends": {
+                                                                                                            "self": {
+                                                                                                                "Mike {[Gentleman]}": "33",
+                                                                                                                "names": [
+                                                                                                                    "aa"
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "problems": [
+                                                                                                            {
+                                                                                                                "xxclasses": [
+                                                                                                                    {
+                                                                                                                        "yyclassNameMissed": [
+                                                                                                                            {
+                                                                                                                                "medicationsClasses": [
+                                                                                                                                    {
+                                                                                                                                        "Mike {[Gentleman]}": [
+                                                                                                                                            {
+                                                                                                                                                "associatedDrug": [
+                                                                                                                                                    {
+                                                                                                                                                        "name": "asprin",
+                                                                                                                                                        "dose": "a",
+                                                                                                                                                        "strength": "500 mg"
+                                                                                                                                                    }
+                                                                                                                                                ],
+                                                                                                                                                "Mike {[Gentleman]}": [
+                                                                                                                                                    {
+                                                                                                                                                        "name": "somethingElse",
+                                                                                                                                                        "dose": "",
+                                                                                                                                                        "strength": "500 mg",
+                                                                                                                                                        "friends": {
+                                                                                                                                                            "self": {
+                                                                                                                                                                "Mike {[Gentleman]}": "33",
+                                                                                                                                                                "names": [
+                                                                                                                                                                    "aa"
+                                                                                                                                                                ]
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }
+                                                                                                                                                ]
+                                                                                                                                            }
+                                                                                                                                        ],
+                                                                                                                                        "Judy": [
+                                                                                                                                            {
+                                                                                                                                                "associatedDrug": [
+                                                                                                                                                    {
+                                                                                                                                                        "name": "asprin",
+                                                                                                                                                        "dose": "",
+                                                                                                                                                        "strength": "500 mg",
+                                                                                                                                                        "friends": [
+                                                                                                                                                            "Mike {[Gentleman]}"
+                                                                                                                                                        ]
+                                                                                                                                                    }
+                                                                                                                                                ],
+                                                                                                                                                "associatedDrug#2": [
+                                                                                                                                                    {
+                                                                                                                                                        "name": "somethingElse",
+                                                                                                                                                        "dose": "",
+                                                                                                                                                        "strength": "500 mg"
+                                                                                                                                                    }
+                                                                                                                                                ],
+                                                                                                                                                "friends": [
+                                                                                                                                                    {
+                                                                                                                                                        "Mike {[Gentleman]}": null
+                                                                                                                                                    },
+                                                                                                                                                    {
+                                                                                                                                                        "Mike {[Gentleman]}": [
+                                                                                                                                                            [
+                                                                                                                                                                "c[ 3\"5ool",
+                                                                                                                                                                35
+                                                                                                                                                            ],
+                                                                                                                                                            [
+                                                                                                                                                                "ca],[1\"3lm"
+                                                                                                                                                            ],
+                                                                                                                                                            53
+                                                                                                                                                        ]
+                                                                                                                                                    },
+                                                                                                                                                    "Jackson",
+                                                                                                                                                    "Mike {[Gentleman]}",
+                                                                                                                                                    {
+                                                                                                                                                        "problems": [
+                                                                                                                                                            {
+                                                                                                                                                                "classes": [
+                                                                                                                                                                    {
+                                                                                                                                                                        "medications": [
+                                                                                                                                                                            {
+                                                                                                                                                                                "medicationsClasses": [
+                                                                                                                                                                                    {
+                                                                                                                                                                                        "Mike {[Gentleman]}": [
+                                                                                                                                                                                            {
+                                                                                                                                                                                                "associatedDrug": [
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                        "name": "asprin",
+                                                                                                                                                                                                        "dose": "a",
+                                                                                                                                                                                                        "strength": "500 mg"
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                "Mike {[Gentleman]}": [
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                        "name": "somethingElse",
+                                                                                                                                                                                                        "dose": "",
+                                                                                                                                                                                                        "strength": "500 mg",
+                                                                                                                                                                                                        "friends": {
+                                                                                                                                                                                                            "self": {
+                                                                                                                                                                                                                "Mike {[Gentleman]}": "33",
+                                                                                                                                                                                                                "names": [
+                                                                                                                                                                                                                    "aa"
+                                                                                                                                                                                                                ]
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                ]
+                                                                                                                                                                                            }
+                                                                                                                                                                                        ],
+                                                                                                                                                                                        "Judy": [
+                                                                                                                                                                                            {
+                                                                                                                                                                                                "associatedDrug": [
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                        "name": "asprin",
+                                                                                                                                                                                                        "dose": "",
+                                                                                                                                                                                                        "strength": "500 mg",
+                                                                                                                                                                                                        "friends": [
+                                                                                                                                                                                                            "Mike {[Gentleman]}"
+                                                                                                                                                                                                        ]
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                "associatedDrug#2": [
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                        "name": "somethingElse",
+                                                                                                                                                                                                        "dose": "",
+                                                                                                                                                                                                        "strength": "500 mg"
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                "friends": [
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                        "Mike {[Gentleman]}": null
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                        "Mike {[Gentleman]}": [
+                                                                                                                                                                                                            [
+                                                                                                                                                                                                                "c[ 3\"5ool",
+                                                                                                                                                                                                                35
+                                                                                                                                                                                                            ],
+                                                                                                                                                                                                            [
+                                                                                                                                                                                                                "ca],[1\"3lm"
+                                                                                                                                                                                                            ],
+                                                                                                                                                                                                            53
+                                                                                                                                                                                                        ]
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    "Jackson",
+                                                                                                                                                                                                    "Mike {[Gentleman]}"
+                                                                                                                                                                                                ]
+                                                                                                                                                                                            }
+                                                                                                                                                                                        ]
+                                                                                                                                                                                    }
+                                                                                                                                                                                ]
+                                                                                                                                                                            }
+                                                                                                                                                                        ],
+                                                                                                                                                                        "classNameMissed": [
+                                                                                                                                                                            {
+                                                                                                                                                                                "Mike {[Gentleman]}": "missing_value"
+                                                                                                                                                                            }
+                                                                                                                                                                        ]
+                                                                                                                                                                    }
+                                                                                                                                                                ],
+                                                                                                                                                                "className": [
+                                                                                                                                                                    {}
+                                                                                                                                                                ]
+                                                                                                                                                            }
+                                                                                                                                                        ]
+                                                                                                                                                    }
+                                                                                                                                                ]
+                                                                                                                                            }
+                                                                                                                                        ]
+                                                                                                                                    }
+                                                                                                                                ]
+                                                                                                                            }
+                                                                                                                        ],
+                                                                                                                        "yyclassNameMissed2": [
+                                                                                                                            {
+                                                                                                                                "Mike {[Gentleman]}": "missing_value"
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ],
+                                                                                                                "xxclasses2": [
+                                                                                                                    {}
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ],
+                                                                                        "Judy": [
+                                                                                            {
+                                                                                                "associatedDrug": [
+                                                                                                    {
+                                                                                                        "name": "asprin",
+                                                                                                        "dose": "",
+                                                                                                        "strength": "500 mg",
+                                                                                                        "friends": [
+                                                                                                            "Mike {[Gentleman]}"
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ],
+                                                                                                "associatedDrug#2": [
+                                                                                                    {
+                                                                                                        "name": "somethingElse",
+                                                                                                        "dose": "",
+                                                                                                        "strength": "500 mg"
+                                                                                                    }
+                                                                                                ],
+                                                                                                "friends": [
+                                                                                                    {
+                                                                                                        "Mike {[Gentleman]}": null
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "Mike {[Gentleman]}": [
+                                                                                                            [
+                                                                                                                "c[ 3\"5ool",
+                                                                                                                35
+                                                                                                            ],
+                                                                                                            [
+                                                                                                                "ca],[1\"3lm"
+                                                                                                            ],
+                                                                                                            53
+                                                                                                        ]
+                                                                                                    },
+                                                                                                    "Jackson",
+                                                                                                    "Mike {[Gentleman]}"
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "classNameMissed": [
+                                                                            {
+                                                                                "Mike {[Gentleman]}": "missing_value"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "className": [
+                                                                    {}
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
                                     }
-                                }
-                            }]
-                        }],
-                        "Queen": [{
-                            "associatedDrug": [{
-                                "name": "asprin",
-                                "dose": "",
-                                "strength": "500 mg",
-                                "friends": ["Mike {[Gentleman]}"]
-                            }],
-                            "associatedDrug#2": [{
-                                "name": "somethingElse",
-                                "dose": "",
-                                "strength": "500 mg"
-                            }],
-                            "friends": [{"Mike {[Gentleman]}": null}, {"Mike {[Gentleman]}": [["c[ 3\"5" +
-                                "ool", 35], ["ca],[1\"3lm"], 53]}, "Jackson", "Mike {[Gentleman]}"]
-                        }]
-                    }]
-                }],
-                "classNameMissed": [{
-                    "Mike {[Gentleman]}": "missing_value"
-                }]
-            }],
-            "className": [{}]
-        }]
+                                ]
+                            }
+                        ],
+                        "classNameMissed": [
+                            {
+                                "Mike {[Gentleman]}": "missing_value"
+                            }
+                        ]
+                    }
+                ],
+                "className": [
+                    {}
+                ]
+            }
+        ]
     };
 
 
     let src = JSON.stringify(JSON.parse(JSON.stringify(original2)));
+    //console.log(JSON.stringify(original2))
+
     console.log('Initial parsed string');
     console.log(src);
 

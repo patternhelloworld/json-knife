@@ -38,19 +38,22 @@ const jsonBase = {
         array: '(\\[)',
         // 7
         empty: '(null)',
-
-  /*      // 2
-        astring: '(?:".*?[^\\u005C\\u0022]"|"")',
-        // 3
-        anumber: '(?:[-+]?(?:\\d+\\.?\\d*|\\d*\.?\\d+)(?:[Ee][-+]?[0-2]?\\d{1,2})?)',
-        // 4
-        aboolean: '(?:true|false)',
-        // 5
-        aobject: '(?:{)',
-        // 6
-        aarray: '(?:\\[)',
         // 7
-        aempty: '(?:null)',*/
+        emptyObject: '{' + commons.spaceOrNot + '}',
+
+        /*      // 2
+
+              astring: '(?:".*?[^\\u005C\\u0022]"|"")',
+              // 3
+              anumber: '(?:[-+]?(?:\\d+\\.?\\d*|\\d*\.?\\d+)(?:[Ee][-+]?[0-2]?\\d{1,2})?)',
+              // 4
+              aboolean: '(?:true|false)',
+              // 5
+              aobject: '(?:{)',
+              // 6
+              aarray: '(?:\\[)',
+              // 7
+              aempty: '(?:null)',*/
     },
 
 }
@@ -104,7 +107,8 @@ const steps = {
         jsonBase.valueType.string + '|'
         + jsonBase.valueType.number + '|'
         + jsonBase.valueType.boolean + '|'
-        + jsonBase.valueType.empty +
+        + jsonBase.valueType.empty + '|'
+        + jsonBase.valueType.emptyObject +
         ')' +
         ')',
 
