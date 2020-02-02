@@ -16,7 +16,7 @@ gulp.task('babel', () => {
 
 gulp.task('test', ['babel'], () => {
   return gulp.src('test/*.js')
-    .pipe(mocha())
+    .pipe(mocha({reporter: 'list'}))
     .on('error', () => {
       gulp.emit('end');
     });

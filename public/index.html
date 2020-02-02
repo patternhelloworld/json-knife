@@ -20,13 +20,99 @@
 <script src="sample.js"></script>
 <script type="text/javascript">
 
+    let doc = {
+        "_id" : "5805dfa519f972b200ea2955",
+        "s" : {
+            "id" : 36435
+        },
+        "a" : [
+            {
+                "XX-(random value)" : {
+                    "V" : 4
+                },
+                "V" : 4,
+                "u" : {
+                    "YY-(random value)" : {
+                        "V" : 4,
+                        "ZZ-(random value)" : {
+                            "V" : 4,
+                            "WW-(random value)" : {
+                                "V" : 4
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    };
+
+    function checkProperties(doc, key, value) {
+        for (var propertyName in doc) {
+            //console.log(propertyName);
+            if (typeof doc[propertyName] == "object") {
+                doc[propertyName] = checkProperties(doc[propertyName], key, value);
+            } else {
+                if (propertyName == key) {
+                    doc[propertyName] = value;
+                    //console.log(doc[propertyName]);
+                }
+            }
+        }
+
+        return doc;
+
+    }
+
+    function changeValue(obj, key ,value) {
+        if (typeof obj === 'object') {
+            // iterating over the object using for..in
+            for (var keys in obj) {
+                //checking if the current value is an object itself
+                if (typeof obj[keys] === 'object') {
+                    // if so then again calling the same function
+                    changeValue(obj[keys], key ,value)
+                } else {
+
+                    if (keys == key) {
+                        obj[keys] = value
+                            console.log(keys);
+                        //doc[propertyName] = value;
+                        //console.log(doc[propertyName]);
+                    }
+                    // else getting the value and replacing single { with {{ and so on
+          /*          let keyValue = obj[keys].replace('{', '{{').replace('}', '}}');
+                    obj[keys] = keyValue;*/
+                }
+            }
+        }
+        return obj;
+    }
+
+    function getObjects(obj, key, newVal) {
+        var newValue = newVal;
+        var objects = [];
+        for (var i in obj) {
+            if (!obj.hasOwnProperty(i)) continue;
+            if (typeof obj[i] == 'object') {
+                objects = objects.concat(getObjects(obj[i], key, newValue));
+            } else if (i == key) {
+                obj[key] = newValue;
+            }
+        }
+        return obj;
+    }
 
     let src = JSON.stringify(JSON.parse(JSON.stringify(original2)));
 
     console.log('Test if original2 is a correct JSON');
     console.log(src);
 
-    let re1 = Pattern.sculptJson(src, 'self', null);
+/*    let re0 = getObjects(original2, 'Mike {[Gentleman]}', 0);
+    console.log('0 Bulk update - Mike {[Gentleman]} : null');
+    console.log(JSON.stringify(re0));*/
+
+
+    let re1 = Pattern.sculptJson(src, 'Mike {[Gentleman]}', null);
     console.log('Bulk update - Mike {[Gentleman]} : null');
     console.log(re1);
     JSON.parse(re1)
