@@ -1,4 +1,4 @@
-# json-knife [![NPM version](https://img.shields.io/npm/v/json-knife.svg)](https://www.npmjs.com/package/json-knife) [![](https://data.jsdelivr.com/v1/package/gh/Andrew-Kang-G/json-knife/badge)](https://www.jsdelivr.com/package/gh/Andrew-Kang-G/json-knife)
+# json-knife [![Build Status](https://travis-ci.org/Andrew-Kang-G/json-knife.svg?branch=master)](https://travis-ci.org/Andrew-Kang-G/json-knife) [![NPM version](https://img.shields.io/npm/v/json-knife.svg)](https://www.npmjs.com/package/json-knife) [![](https://data.jsdelivr.com/v1/package/gh/Andrew-Kang-G/json-knife/badge)](https://www.jsdelivr.com/package/gh/Andrew-Kang-G/json-knife)
 ## Overview
 Mass replace specific properties value with a new value recursively in huge, complex and deep JSON string 
 with a robust regular expression based engine.
