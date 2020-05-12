@@ -1,5 +1,4 @@
 import Pattern from './pattern';
-import ValidationError from './error-handler';
 import Util from './util';
 
 
@@ -218,7 +217,7 @@ function getMaterials(original, key, value) {
 
         extractedAreas.push({
             value: value,
-            aaa : match[matchedGroupNumber],
+            //aaa : match[matchedGroupNumber],
             matchedKeyValue: matchedKeyValue,
             newMatchedKeyValue: newMatchedKeyValue,
             startIndex: startIndex,
@@ -228,9 +227,9 @@ function getMaterials(original, key, value) {
         idx += 1;
     }
 
-   // console.log('※ getMaterials');
-   // console.log(keySteps);
-   // console.log(extractedAreas);
+    //console.log('※ getMaterials');
+    //console.log(keySteps);
+    //console.log(extractedAreas);
 
     return extractedAreas;
 }

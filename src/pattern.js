@@ -38,7 +38,7 @@ const jsonBase = {
         // 6
         array: '(\\[)',
         // 7
-        empty: '(null)',
+        empty: '(null|undefined)',
         // 7
         emptyObject: '{' + commons.spaceOrNot + '}',
 

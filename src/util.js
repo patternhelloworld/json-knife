@@ -1,7 +1,6 @@
 /*
 *     Private : Utils
 * */
-import ValidationError from './error-handler';
 import Pattern from './pattern';
 
 const Text = {
