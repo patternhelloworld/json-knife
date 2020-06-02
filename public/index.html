@@ -18,7 +18,25 @@
 <script class="jsbin" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../dist/json-knife.bundle.js"></script>
 <script src="sample.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 <script type="text/javascript">
+
+    var startTime, endTime;
+
+    function start() {
+        startTime = performance.now();
+    };
+
+    function end() {
+        endTime = performance.now();
+        var timeDiff = endTime - startTime; //in ms
+        // strip the ms
+        //timeDiff /= 1000;
+
+        // get seconds
+        //var seconds = Math.round(timeDiff);
+        console.log(timeDiff + " m-seconds");
+    }
 
     let doc = {
         "_id" : "5805dfa519f972b200ea2955",
@@ -103,15 +121,23 @@
     }
 
     let src = JSON.stringify(JSON.parse(JSON.stringify(original2)));
+    let src2 = JSON.stringify(JSON.parse(JSON.stringify(original3)));
 
     console.log('Test if original2 is a correct JSON');
-    console.log(src);
+    //console.log(src);
 
 /*    let re0 = getObjects(original2, 'Mike {[Gentleman]}', 0);
     console.log('0 Bulk update - Mike {[Gentleman]} : null');
     console.log(JSON.stringify(re0));*/
 
 
+/*    let rex = Pattern.deepCompare('[{"5": false}]', '[{"5": false}]');
+    console.log(rex);*/
+
+/*    start();
+    let re = Pattern.deepCompare(src, src2);
+    console.log('re : ' + re);
+    end();*/
     let re1 = Pattern.sculptJson(src, 'Mike {[Gentleman]}', null);
     console.log('Bulk update - Mike {[Gentleman]} : null');
     console.log(re1);

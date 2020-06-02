@@ -14,23 +14,34 @@ const commons = {
 const jsonBase = {
 
     // key starts with two patterns (1) {"key":  (2) ,"key" :
-    key(k) {
-        return '[,{]' +
-            commons.spaceOrNot +
-            '"(' + k + ')"' +
-            commons.spaceOrNot +
-            ':' +
-            commons.spaceOrNot;
+    key(k = null) {
+        if (k) {
+            return '[,{]' +
+                commons.spaceOrNot +
+                '"(' + k + ')"' +
+                commons.spaceOrNot +
+                ':' +
+                commons.spaceOrNot;
+        } else {
+            return '[,{]' +
+                commons.spaceOrNot +
+                jsonBase.keyType +
+                commons.spaceOrNot +
+                ':' +
+                commons.spaceOrNot;
+        }
     },
 
-    keyType : '"((?:[^"\\\\]|\\\\"|\\\\[^"])*)"',
-    //keyType: '"((?:[^"]*?[^\\u005C])|(?:(?=[^"]*[\\u005C]").*?[^\\u005C]))"',
+
+    //keyType : '"((?:[^"\\\\]|\\\\"|\\\\[^"])*)"',
+    keyType: '"((?:[^"]*?[^\\u005C])|(?:(?=[^"]*[\\u005C]").*?[^\\u005C]))"',
 
     valueType: {
         // 2
         string: '(""|".*?[^\\u005C]")',
         // 3
-        number: '([-+]?(?:\\d+\\.?\\d*|\\d*\.?\\d+)(?:[Ee][-+]?[0-2]?\\d{1,2})?)',
+        //number: '([-+]?(?:\\d+\\.?\\d*|\\d*\.?\\d+)(?:[Ee][-+]?[0-2]?\\d{1,2})?)',
+        number : '(-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)',
         // 4
         boolean: '(true|false)',
         // 5
@@ -57,6 +68,22 @@ const jsonBase = {
               aempty: '(?:null)',*/
     },
 
+    valueType2: {
+
+        string: '(?:""|".*?[^\\u005C]")',
+
+        number : '(?:-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)',
+
+        boolean: '(?:true|false)',
+
+        empty: '(?:null|undefined)',
+
+        emptyObject: '{' + commons.spaceOrNot + '}',
+
+        // 7
+        emptyArray: '\\[' + commons.spaceOrNot + '\\]',
+    }
+
 }
 
 // This is for service.js -> calculateSteps
@@ -72,7 +99,7 @@ const steps = {
         '|' +
         // }],
         commons.spaceOrEndBracketOrNot +
-        ','+
+        ',' +
         '|' +
         // [[{
         '(?:[\\[\\n\\r\\t\\s]*{[\\[\\n\\r\\t\\s]*)+' +
@@ -86,32 +113,45 @@ const steps = {
 
 
     // withNoKey is areas where JSON sets up hierarchies(steps).
-    withNoKey: '(' +
+    withNoKey(includeNoStepAreas = true) {
+
+        const token = includeNoStepAreas ? '|' : '';
+
+        return '(' +
+
         '(' +
+
+        /* 1. -> }]},{, }]},[ */
 
         // catch desc symbols
         '(' +
         '(?:' + commons.spaceOrNot + '[\\]}]' + commons.spaceOrNot + ')+' +
-        ')' +
+            token + ')' +
 
         ',' +
+
         commons.spaceOrStartBracketOrNot +
 
         '|' +
 
+        /* 2. -> [ */
         // don't need to catch asc symbols
         '(?:' + commons.spaceOrNot + '\\[' + commons.spaceOrNot + ')+' +
 
         ')' +
 
-        '(?:' +
-        jsonBase.valueType.string + '|'
-        + jsonBase.valueType.number + '|'
-        + jsonBase.valueType.boolean + '|'
-        + jsonBase.valueType.empty + '|'
-        + jsonBase.valueType.emptyObject +
+        '(' +
+        jsonBase.valueType2.string + '|'
+        + jsonBase.valueType2.number + '|'
+        + jsonBase.valueType2.boolean + '|'
+        + jsonBase.valueType2.empty + '|'
+        + jsonBase.valueType2.emptyObject + '|'
+        + jsonBase.valueType2.emptyArray +
         ')' +
-        ')',
+
+        '|(' + jsonBase.valueType2.emptyObject + '|' + jsonBase.valueType2.emptyArray +'))'
+
+    },
 
 
     asc: '[\\[{]',
@@ -134,6 +174,17 @@ function jsonOutput(k) {
 
 }
 
+
+function jsonOutput2() {
+
+    return steps.withKey + '(' + jsonBase.valueType2.string + '|'
+        + jsonBase.valueType2.number + '|'
+        + jsonBase.valueType2.boolean + '|'
+        + jsonBase.valueType2.empty + '|'
+        + ')'
+
+}
+
 export default {
-    commons, jsonBase, jsonOutput, steps
+    commons, jsonBase, jsonOutput, jsonOutput2, steps
 }

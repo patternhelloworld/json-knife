@@ -29,6 +29,29 @@ function sculptJson(original, key, value){
     return Service.sculpt(original, Service.getMaterials(original, key, value));
 }
 
+/**
+ * @brief
+ * [Research] Deep-compare two JSONs regardless of positions of every 'key' in objects but considering positions of elements in arrays.
+ * @author Andrew Kang
+ * @param original string required (must be JSON string)
+ * @param original2 string required (must be JSON string)
+ * @return string
+ */
+function deepCompare(original, original2){
+
+    if (!(original && typeof original === 'string')) {
+        throw new Error('the variable "original" must be a string type and not be null.');
+    }else if (!(original2 && typeof original2 === 'string')) {
+        throw new Error('the variable "original2" must be a string type and not be null.');
+    }
+
+    original = original.trim();
+    original2 = original2.trim();
+
+    return Service.deepCompare(original, original2);
+}
+
+
 export default {
 
     sculptJson
